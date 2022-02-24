@@ -8,6 +8,7 @@ let life = 3;
 let scoreText;
 let lifeText;
 let rick;
+let first = true;
 
 const config = {
   type: Phaser.AUTO,
@@ -247,7 +248,11 @@ function update(){
     ball.setVelocityX(0) //prevents ball from floating left or right
 
     if(cursors.space.isDown) {
-      gameStart = true
+      gameStart = true;
+      if(first){
+        life === 3;
+        first = false;
+      }
       startGameText.setVisible(false)
       ball.setVelocityY(-250)
     }
@@ -268,7 +273,7 @@ function update(){
         ball.setVelocityY(0) //prevents ball from floating up
         ball.setVelocityX(0) //prevents ball from floating left or right
     }
-    
+  
   } else if (win()) {
     winText.setVisible(true)
     ball.disableBody(true, true)
