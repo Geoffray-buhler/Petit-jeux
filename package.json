@@ -1,0 +1,23 @@
+{
+  "name": "petit-jeux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geoffray-buhler/Petit-jeux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geoffray-buhler/Petit-jeux/issues"
+  },
+  "homepage": "https://github.com/Geoffray-buhler/Petit-jeux#readme",
+  "dependencies": {
+    "phaser": "^3.55.2"
+  }
+}
