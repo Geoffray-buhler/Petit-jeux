@@ -13,16 +13,26 @@ class Mainmenu extends Phaser.Scene {
         this.load.image('logo', 'Assets/Images/Mainmenu/Satellith.png');
         this.load.image('btn', 'Assets/Images/Mainmenu/Jouer.png');
         this.load.audio('musique','Assets/Sounds/Plongee-Nocturne.mp3');
+
+        this.load.image('red', 'Assets/Images/Mainmenu/red.png');
     }
 
     create ()
     {
+
+
         this.add.image(500, 300, 'sky').setScale(0.3);
-        this.add.image(500, 200, 'logo').setScale(0.1);
+        var logo = this.add.image(500, 200, 'logo').setScale(0.1);
         var button = this.add.image(750, 500, 'btn').setScale(0.3).setInteractive();
         var music = this.sound.add('musique').setVolume(0.2);
         music.play();
 
+        var particles = this.add.particles('red');
+        var emitter = particles.createEmitter({
+            speed: 800,
+            scale: { start: 0, end: 0.2 },
+            blendMode: 'ADD'
+        });
         
         button.on('pointerover', function (event) {
             this.setTint(0xff0000);
@@ -39,6 +49,8 @@ class Mainmenu extends Phaser.Scene {
         button.on('pointerup', function (event) {
             this.clearTint();
         });
+
+        emitter.startFollow(logo);
     }
 }
 
