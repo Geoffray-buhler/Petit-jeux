@@ -19,8 +19,6 @@ class Mainmenu extends Phaser.Scene {
 
     create ()
     {
-
-
         this.add.image(500, 300, 'sky').setScale(0.3);
         var logo = this.add.image(500, 200, 'logo').setScale(0.1);
         var button = this.add.image(750, 500, 'btn').setScale(0.3).setInteractive();
