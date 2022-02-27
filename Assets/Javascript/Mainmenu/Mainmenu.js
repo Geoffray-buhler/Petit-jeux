@@ -33,7 +33,7 @@ class Mainmenu extends Phaser.Scene {
         });
         
         button.on('pointerover', function (event) {
-            this.setTint(0xff0000);
+            this.setTint(0x0099ff);
         });
 
         button.on('pointerout', function (event) {
@@ -70,3 +70,19 @@ var config = {
 };
 
 var game = new Phaser.Game(config);
+
+game.loadFile = function(){
+    var file = JSON.parse(localStorage.getItem('saveFile'));
+    game.scene.score = file.score;
+    game.scene.visits = file.visits;
+};
+
+setInterval(() => {
+    game.saveFile = function(){
+      var file = {
+          score: 1000,
+          visits: 0
+      };
+      localStorage.setItem('saveFile',JSON.stringify(file));
+  };
+}, 1000);

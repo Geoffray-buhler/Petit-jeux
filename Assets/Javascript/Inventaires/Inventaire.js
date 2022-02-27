@@ -8,7 +8,7 @@ class SceneDeJeux extends Phaser.Scene {
     preload ()
     {
         this.load.image('sky', 'Assets/Images/Mainmenu/805177.png');
-        console.log('Ok !!!');
+          // load system 
     }
 
     create ()
